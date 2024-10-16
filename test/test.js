@@ -7,6 +7,10 @@ describe('String Calculator', () => {
 
     test('should return sum of numbers for given numbers', () => {
         expect(stringCalculator.add("1")).toBe(1);
-    })
-   
+    });
+
+    test('should return sum of numbers for given numbers', () => {
+        expect(stringCalculator.add("1,5")).toBe(6);
+    });
+    
 });
