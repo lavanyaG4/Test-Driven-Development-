@@ -13,4 +13,7 @@ describe('String Calculator', () => {
         expect(stringCalculator.add("1,5")).toBe(6);
     });
     
+    test('should return sum of numbers for given numbers', () => {
+        expect(stringCalculator.add("1\n2,3")).toBe(6);
+    });
 });

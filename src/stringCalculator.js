@@ -8,6 +8,10 @@ function add(numbers) {
         return parseInt(numbers);
     } 
     // Split the input string by commas, convert and sum them
+    if(numbers.includes('\n')){
+        numbers = numbers.replace('\n',',');
+    }
+    
     const splitedNumbers = numbers.split(',').map(Number);
     return splitedNumbers.reduce((sum, num) => sum + num, 0);
     
