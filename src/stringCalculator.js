@@ -3,16 +3,17 @@ function add(numbers) {
     if (numbers === "") {
       return 0;
     }
-    // For a single number
-    if(numbers.length == 1) {
-        return parseInt(numbers);
-    } 
-    // Split the input string by commas, convert and sum them
-    if(numbers.includes('\n')){
-        numbers = numbers.replace('\n',',');
+   
+    let delimiter = /,|\n/; 
+    // Handle custom delimiter
+    if (numbers.startsWith("//")) {
+      const parts = numbers.split('\n', 2);
+      delimiter = new RegExp(parts[0].substring(2)); 
+      numbers = parts[1];
     }
-    
-    const splitedNumbers = numbers.split(',').map(Number);
+  
+    const splitedNumbers = numbers.split(delimiter).map(Number);
+
     return splitedNumbers.reduce((sum, num) => sum + num, 0);
     
 }
