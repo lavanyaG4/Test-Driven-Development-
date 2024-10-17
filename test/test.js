@@ -20,5 +20,9 @@ describe('String Calculator', () => {
     test('should handle ; as delimiters', () => {
         expect(stringCalculator.add("//;\n1;2")).toBe(3);
     });
+
+    test('should handle negative numbers', () => {
+        expect(() => stringCalculator.add("-1, 3,3,-9")).toThrow("Negative numbers not allowed: -1,-9");
+    });
     
 });
